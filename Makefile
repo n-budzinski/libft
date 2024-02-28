@@ -1,13 +1,14 @@
-CC=gcc
+CC=cc
 CFLAGS=-Wall -Wextra -Werror
 COMPILE=$(COMPILER) $(FLAGS)
 SOURCE=$(wildcard *.c)
-DIR=.
 NAME=libft
 
 all: $(NAME)
 
 $(NAME): $(SOURCE)
-	$(CC) $(CFLAGS) $(SOURCE) -I $(DIR) -o $(NAME)
+	$(CC) $(CFLAGS) $(SOURCE) -c *.c
+	ar -rc $(NAME).a *.o
 
-
+clean:
+	rm -rf *.o

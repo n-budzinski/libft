@@ -6,11 +6,13 @@
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:31:39 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/02/28 18:42:23 by nbudzins         ###   ########.fr       */
+/*   Updated: 2024/02/28 18:56:32 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //typedef unsigned int size_t;
+
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
