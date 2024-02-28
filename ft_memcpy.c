@@ -6,7 +6,7 @@
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 23:50:48 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/02/28 18:03:40 by nbudzins         ###   ########.fr       */
+/*   Updated: 2024/02/28 20:59:13 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,14 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	for(int i = 0; i < n; i++)
+	int i;
+
+	i = 0;
+	while(i < n)
+	{
 		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		i++;
+	}
 	return dest;
 }
 /*

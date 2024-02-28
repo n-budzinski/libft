@@ -6,15 +6,17 @@
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 21:29:32 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/02/27 22:46:43 by nbudzins         ###   ########.fr       */
+/*   Updated: 2024/02/28 20:54:58 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *c)
+int	ft_strlen(const char *c)
 {
 	int i;
 
-	for (i = 0; c[i] != 0x00; i++);
+	i = 0;
+	while(c[i] != 0x00)
+		i++;
 	return i;
 }
 /*

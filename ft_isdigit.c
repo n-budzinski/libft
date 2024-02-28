@@ -6,11 +6,11 @@
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 18:47:19 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/02/27 21:11:30 by nbudzins         ###   ########.fr       */
+/*   Updated: 2024/02/28 20:58:14 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(char c)
+int ft_isdigit(int c)
 {
 	return (c >= 48 && c <= 57);
 }

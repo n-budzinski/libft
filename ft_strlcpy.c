@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 18:29:35 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/02/28 20:57:55 by nbudzins         ###   ########.fr       */
+/*   Created: 2024/02/28 19:25:22 by nbudzins          #+#    #+#             */
+/*   Updated: 2024/02/28 20:52:42 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
+	size_t i;
+	size_t len;
+
+	if(!dst || !src)
+		return 0;
+	len = ft_strlen(src);
+	i = 0;
+	if(size > 0)
+	{
+		while(src[i] && i < size - 1)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+	}
+	dst[i] = 0x00;
+	return len;
 }
-/*
-int main(){
-	#include <stdio.h>
-	if(ft_isalpha('a'))
-		printf("True");
-	else
-		printf("False");
-	return 0;
-}
-*/

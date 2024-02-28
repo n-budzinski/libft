@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 18:29:35 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/02/28 20:57:55 by nbudzins         ###   ########.fr       */
+/*   Created: 2024/02/28 21:01:15 by nbudzins          #+#    #+#             */
+/*   Updated: 2024/02/28 21:05:50 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+int	toupper(int c)
 {
-	return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
+	if(c >= 97 && c <= 122)
+		return (c - 32);
+	return c;
 }
-/*
-int main(){
-	#include <stdio.h>
-	if(ft_isalpha('a'))
-		printf("True");
-	else
-		printf("False");
-	return 0;
-}
-*/
