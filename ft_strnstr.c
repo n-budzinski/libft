@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 00:07:05 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/02/29 14:24:06 by nbudzins         ###   ########.fr       */
+/*   Created: 2024/02/29 16:41:49 by nbudzins          #+#    #+#             */
+/*   Updated: 2024/02/29 17:08:24 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char *strnstr(const char *big, const char *little, size_t len)
 {
-	char *dest_ptr;
-	char *src_ptr;
-	unsigned int i;
-	if (!src || !dest)
-		return 0x00;
-	dest_ptr = (char *)dest;
-	src_ptr = (char *)src;
-	if (dest_ptr < src_ptr)
+	size_t i;
+	size_t j;
+
+	i = 0;
+	while (big[i] && i < len)
 	{
-		i=0;
-		while(n>0)
+		j = 0;
+		while (little[j] == big[i + j] && little[j] && (i + j) < len)
 		{
-			dest_ptr[i] = src_ptr[i];
-			n--;
+			j++;
 		}
+		if (!little[j])
+			return (char *)(big + i);
+		i++;
 	}
-	else
-	{
-		while(i<n)
-		{
-			dest_ptr[n] = src_ptr[n];
-			i++;
-		}
-	}
-	return dest;	
+	return (NULL);
 }

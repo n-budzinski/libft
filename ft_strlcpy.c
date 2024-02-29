@@ -6,7 +6,7 @@
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 19:25:22 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/02/28 20:52:42 by nbudzins         ###   ########.fr       */
+/*   Updated: 2024/02/28 23:25:19 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t len;
 
 	if(!dst || !src)
-		return 0;
+		return (0);
 	len = ft_strlen(src);
 	i = 0;
 	if(size > 0)
@@ -28,7 +28,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 			dst[i] = src[i];
 			i++;
 		}
+		dst[i] = 0x00;
 	}
-	dst[i] = 0x00;
-	return len;
+	return (len);
 }
