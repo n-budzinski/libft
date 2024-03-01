@@ -1,6 +1,5 @@
 #ifndef LIBFT_H
 #define LIBFT_H
-#define NULL 0
 #include <stdlib.h>
 #include <unistd.h>
 
