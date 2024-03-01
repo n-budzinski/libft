@@ -1,42 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 00:07:05 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/02/29 19:48:25 by nbudzins         ###   ########.fr       */
+/*   Created: 2024/02/29 21:15:21 by nbudzins          #+#    #+#             */
+/*   Updated: 2024/02/29 22:55:59 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+static size_t	is_whitespace(char c)
 {
-	char *dest_ptr;
-	char *src_ptr;
+	if (c == ' ' || (c >= '\t' && c <= '\r'))
+		return (1);
+	return (0);
+}
+
+int	ft_atoi(const char *nptr)
+{
 	unsigned int i;
-	if (!src || !dest)
-		return (NULL);
-	dest_ptr = (char *)dest;
-	src_ptr = (char *)src;
+	int result;
+	unsigned char sign;
+
 	i = 0;
-	if (dest_ptr <= src_ptr)
+	sign = 1;
+	result = 0;
+	while (is_whitespace(nptr[i]))
+		i++;
+	while (nptr[i] == '-' || nptr[i] == '+')
 	{
-		while(i < n)
+		if(nptr[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	if(ft_isdigit(nptr[i]))
+	{
+		while (ft_isdigit(nptr[i]))
 		{
-			dest_ptr[i] = src_ptr[i];
+			result = result * 10 + (nptr[i] - '0');
 			i++;
 		}
+		return (result * sign);
 	}
-	else
-	{
-		while(n > 0)
-		{
-			n--;
-			dest_ptr[n] = src_ptr[n];
-		}
-	}
-	return dest;	
+	return (0);
 }

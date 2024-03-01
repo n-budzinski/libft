@@ -6,11 +6,11 @@
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 21:01:15 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/02/28 21:05:50 by nbudzins         ###   ########.fr       */
+/*   Updated: 2024/02/29 19:10:19 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	toupper(int c)
+int	ft_toupper(int c)
 {
 	if(c >= 97 && c <= 122)
 		return (c - 32);

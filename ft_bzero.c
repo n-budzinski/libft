@@ -6,7 +6,7 @@
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:31:39 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/02/28 18:56:32 by nbudzins         ###   ########.fr       */
+/*   Updated: 2024/02/29 17:21:23 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int i;
+	size_t i;
 	for(i = 0; i < n; i++)
 		((char *)s)[i] = 0x00;
 }
