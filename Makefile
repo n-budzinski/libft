@@ -2,7 +2,7 @@ NAME=libft
 INCDIR=.
 RM = rm -f
 ARNAME = ar rcs $(NAME).a
-CC=gcc
+CC=gcc -g
 CCFLAGS=-Wall -Wextra -Werror
 CPPFLAGS=-I$(INCDIR)
 COMPILE=$(CC) $(CCFLAGS) $(CPPFLAGS)
@@ -33,7 +33,8 @@ ft_strrchr \
 ft_strtrim \
 ft_substr \
 ft_tolower \
-ft_toupper)
+ft_toupper \
+ft_itoa )
 
 all: $(NAME)
 
@@ -53,7 +54,7 @@ clean:
 	$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME).a
 
 re: fclean all
 

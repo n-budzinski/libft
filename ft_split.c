@@ -13,59 +13,69 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/06 04:55:20 by nbudzins                                 */
-/*   Updated: 2024/03/06 20:17:32 by nbudzins                                 */
+/*   Updated: 2024/03/09 12:48:44 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t calc_size(char const *s, char c)
+static size_t	calc_size(char const *s, char c)
 {
-	size_t i;
-	size_t j;
+	size_t			i;
 
 	i = 0;
-	j = 0;
-	while (s[i] != '\0')
+	while (*s)
 	{
-		if (s[i] == c)
-			j++;
-		i++;
+		if (*s != c)
+		{
+			i++;
+			while (*s && *s != c)
+				s++;
+		}
+		else
+			s++;
 	}
-	j++;
-	return (j);
+	return (i);
 }
 
-char **ft_split(char const *s, char c)
+static char	**split(char **ptr, char const *s, char c)
 {
-	size_t nmem;
-	char **ptr;
-	size_t i;
-	size_t j;
-	size_t k;
+	size_t			i;
+	size_t			j;
+	size_t			k;
 
-	nmem = calc_size(s, c);
-	ptr = ft_calloc(nmem + 1, sizeof(char *));
 	i = 0;
 	j = 0;
 	k = 0;
-	if (ptr == NULL)
+	while (s[j])
 	{
-		return (NULL);
-	}
-	while (s[j] != '\0')
-	{
-		if (s[j] == c || s[j] == '\0')
+		if (s[j] == c)
 		{
-			ptr[k] = malloc(j - i + 1);
-			if (ptr[k] != NULL)
-			{
-				ft_strlcpy(ptr[k], s + i, j - i + 1);
-				k++;
-			}
+			ptr[k] = ft_substr(s, i, j - i);
+			if (ptr[k++] == NULL)
+				return (NULL);
 			i = j + 1;
 		}
 		j++;
 	}
+	if (i < j)
+	{
+		ptr[k] = ft_substr(s, i, j - i);
+		if (ptr[k] == NULL)
+			return (NULL);
+	}
+	return (ptr);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t			nmem;
+	char			**ptr;
+
+	nmem = calc_size(s, c);
+	ptr = ft_calloc(nmem + 1, sizeof (char *));
+	if (ptr == NULL)
+		return (NULL);
+	ptr = split(ptr, s, c);
 	return (ptr);
 }
