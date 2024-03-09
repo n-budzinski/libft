@@ -8,35 +8,45 @@
 /*    ▪        ·▀ ·▀▀▀ •    ▀▀▀▀ ▀▪ ▀  ▀ .▀  ▀ ▀▀▀▀  ▀  ▀  ▀▀▀▀ ▀             */
 /*                                                          .           ▪     */
 /*            .                                    .                          */
-/*   ft_strlcat.c       ▪             .                                       */
+/*   ft_strtrim.c       ▪             .                                       */
 /*   .                                                                        */
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
-/*   Created: 2024/03/01 14:38:41 by nbudzins                                 */
-/*   Updated: 2024/03/08 03:06:10 by nbudzins                                 */
+/*   Created: 2024/03/06 03:52:13 by nbudzins                                 */
+/*   Updated: 2024/03/06 04:54:45 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+static int isinset(char c, char const *set)
 {
-	size_t dl;
-	size_t sl;
+	int i;
 
-	dl = ft_strlen(dst);
-	sl = ft_strlen(src);
-	//THE BUFFER IS FULL, RETURN THE SIZE OF THE BUFFER + SOURCE LENGTH
-	if (dl >= size)
-		return (size + sl);
-	if (size - dl > sl)
-	//THERE IS SPACE FOR THE WHOLE STRING AND THE NUL TERMINATOR
-		ft_memcpy(dst + dl, src, sl + 1);
-	else
+	i = 0;
+	while (set[i] != '\0')
 	{
-	//COPY ONLY THE PORTION, THAT WILL FIT IN THE BUFFER AND TERMINATE
-		ft_memcpy(dst + dl, src, size - dl - 1);
-		dst[size - 1] = '\0';
+		if (set[i] == c)
+			return (0);
+		i++;
 	}
-	return (dl + sl);
+	return (0);
+}
+
+char *ft_strtrim(char const *s1, char const *set)
+{
+	void *ptr;
+	size_t i;
+	size_t j;
+	
+	i = 0;
+	j = ft_strlen(s1) - 1;
+	while(isinset(s1[i], set))
+		i++;
+	while(isinset(s1[j], set))
+		j--;
+	ptr = malloc(j - i + 1);
+	if(ptr != NULL)
+		ft_strlcpy(ptr, s1 + i, j);
+	return (ptr);
 }

@@ -8,35 +8,29 @@
 /*    ▪        ·▀ ·▀▀▀ •    ▀▀▀▀ ▀▪ ▀  ▀ .▀  ▀ ▀▀▀▀  ▀  ▀  ▀▀▀▀ ▀             */
 /*                                                          .           ▪     */
 /*            .                                    .                          */
-/*   ft_strlcat.c       ▪             .                                       */
+/*   ft_substr.c        ▪             .                                       */
 /*   .                                                                        */
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
-/*   Created: 2024/03/01 14:38:41 by nbudzins                                 */
-/*   Updated: 2024/03/08 03:06:10 by nbudzins                                 */
+/*   Created: 2024/03/06 02:49:26 by nbudzins                                 */
+/*   Updated: 2024/03/08 23:35:21 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t dl;
-	size_t sl;
+	void *ptr;
+	size_t subsize;
 
-	dl = ft_strlen(dst);
-	sl = ft_strlen(src);
-	//THE BUFFER IS FULL, RETURN THE SIZE OF THE BUFFER + SOURCE LENGTH
-	if (dl >= size)
-		return (size + sl);
-	if (size - dl > sl)
-	//THERE IS SPACE FOR THE WHOLE STRING AND THE NUL TERMINATOR
-		ft_memcpy(dst + dl, src, sl + 1);
-	else
-	{
-	//COPY ONLY THE PORTION, THAT WILL FIT IN THE BUFFER AND TERMINATE
-		ft_memcpy(dst + dl, src, size - dl - 1);
-		dst[size - 1] = '\0';
-	}
-	return (dl + sl);
+	if (start >= (unsigned int)ft_strlen(s))
+		return (ft_strdup(""));
+	subsize = ft_strlen(s + start);
+	if (len > subsize)
+		len = subsize;
+	ptr = ft_calloc(len + 1, sizeof(char));
+	if (ptr != NULL)
+		ft_strlcpy(ptr, s + start, subsize + 1);
+	return (ptr);
 }

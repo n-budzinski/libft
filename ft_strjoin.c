@@ -8,35 +8,32 @@
 /*    ▪        ·▀ ·▀▀▀ •    ▀▀▀▀ ▀▪ ▀  ▀ .▀  ▀ ▀▀▀▀  ▀  ▀  ▀▀▀▀ ▀             */
 /*                                                          .           ▪     */
 /*            .                                    .                          */
-/*   ft_strlcat.c       ▪             .                                       */
+/*   ft_strjoin.c       ▪             .                                       */
 /*   .                                                                        */
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
-/*   Created: 2024/03/01 14:38:41 by nbudzins                                 */
-/*   Updated: 2024/03/08 03:06:10 by nbudzins                                 */
+/*   Created: 2024/03/06 03:35:52 by nbudzins                                 */
+/*   Updated: 2024/03/09 00:00:48 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char *ft_strjoin(char const *s1, char const *s2)
 {
-	size_t dl;
-	size_t sl;
+	size_t s1l;
+	size_t s2l;
+	size_t tl;
+	void *ptr;
 
-	dl = ft_strlen(dst);
-	sl = ft_strlen(src);
-	//THE BUFFER IS FULL, RETURN THE SIZE OF THE BUFFER + SOURCE LENGTH
-	if (dl >= size)
-		return (size + sl);
-	if (size - dl > sl)
-	//THERE IS SPACE FOR THE WHOLE STRING AND THE NUL TERMINATOR
-		ft_memcpy(dst + dl, src, sl + 1);
-	else
+	s1l = ft_strlen(s1);
+	s2l = ft_strlen(s2);
+	tl = s1l + s2l + 1;
+	ptr = (char *)malloc(tl);
+	if(ptr != NULL)
 	{
-	//COPY ONLY THE PORTION, THAT WILL FIT IN THE BUFFER AND TERMINATE
-		ft_memcpy(dst + dl, src, size - dl - 1);
-		dst[size - 1] = '\0';
+		ft_strlcpy(ptr, s1, s1l);
+		ft_strlcpy(ptr + s1l, s2, s2l);
 	}
-	return (dl + sl);
+	return (ptr);
 }

@@ -1,7 +1,7 @@
 NAME=libft
 INCDIR=.
 RM = rm -f
-ARNAME = ar rcs $(NAME)
+ARNAME = ar rcs $(NAME).a
 CC=gcc
 CCFLAGS=-Wall -Wextra -Werror
 CPPFLAGS=-I$(INCDIR)
@@ -20,13 +20,18 @@ ft_memcmp \
 ft_memcpy \
 ft_memmove \
 ft_memset \
+ft_split \
 ft_strchr \
+ft_strdup \
+ft_strjoin \
 ft_strlcat \
 ft_strlcpy \
 ft_strlen \
 ft_strncmp \
 ft_strnstr \
 ft_strrchr \
+ft_strtrim \
+ft_substr \
 ft_tolower \
 ft_toupper)
 
@@ -40,6 +45,10 @@ $(NAME): $(OBJ)
 %.o: %.c
 	$(COMPILE) -c $< -o $@
 
+so:
+	$(CC) -nostartfiles -fPIC $(CCFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o $(NAME).so $(OBJ)
+
 clean:
 	$(RM) $(OBJ)
 
@@ -47,3 +56,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: clean fclean

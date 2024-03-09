@@ -8,35 +8,64 @@
 /*    ▪        ·▀ ·▀▀▀ •    ▀▀▀▀ ▀▪ ▀  ▀ .▀  ▀ ▀▀▀▀  ▀  ▀  ▀▀▀▀ ▀             */
 /*                                                          .           ▪     */
 /*            .                                    .                          */
-/*   ft_strlcat.c       ▪             .                                       */
+/*   ft_split.c         ▪             .                                       */
 /*   .                                                                        */
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
-/*   Created: 2024/03/01 14:38:41 by nbudzins                                 */
-/*   Updated: 2024/03/08 03:06:10 by nbudzins                                 */
+/*   Created: 2024/03/06 04:55:20 by nbudzins                                 */
+/*   Updated: 2024/03/06 20:17:32 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+static size_t calc_size(char const *s, char c)
 {
-	size_t dl;
-	size_t sl;
+	size_t i;
+	size_t j;
 
-	dl = ft_strlen(dst);
-	sl = ft_strlen(src);
-	//THE BUFFER IS FULL, RETURN THE SIZE OF THE BUFFER + SOURCE LENGTH
-	if (dl >= size)
-		return (size + sl);
-	if (size - dl > sl)
-	//THERE IS SPACE FOR THE WHOLE STRING AND THE NUL TERMINATOR
-		ft_memcpy(dst + dl, src, sl + 1);
-	else
+	i = 0;
+	j = 0;
+	while (s[i] != '\0')
 	{
-	//COPY ONLY THE PORTION, THAT WILL FIT IN THE BUFFER AND TERMINATE
-		ft_memcpy(dst + dl, src, size - dl - 1);
-		dst[size - 1] = '\0';
+		if (s[i] == c)
+			j++;
+		i++;
 	}
-	return (dl + sl);
+	j++;
+	return (j);
+}
+
+char **ft_split(char const *s, char c)
+{
+	size_t nmem;
+	char **ptr;
+	size_t i;
+	size_t j;
+	size_t k;
+
+	nmem = calc_size(s, c);
+	ptr = ft_calloc(nmem + 1, sizeof(char *));
+	i = 0;
+	j = 0;
+	k = 0;
+	if (ptr == NULL)
+	{
+		return (NULL);
+	}
+	while (s[j] != '\0')
+	{
+		if (s[j] == c || s[j] == '\0')
+		{
+			ptr[k] = malloc(j - i + 1);
+			if (ptr[k] != NULL)
+			{
+				ft_strlcpy(ptr[k], s + i, j - i + 1);
+				k++;
+			}
+			i = j + 1;
+		}
+		j++;
+	}
+	return (ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 21:09:06 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/02/29 19:11:00 by nbudzins         ###   ########.fr       */
+/*   Updated: 2024/03/08 03:26:15 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t i;
+	unsigned char uc;
 
-	i = 0;
-	while(s[i] != '\0')
+	if (!s)
+		return (NULL);	
+	uc = (unsigned char)c;
+	while(*s != '\0')
 	{
-		if(s[i] == c)
-			return (char *)(s + i);
-		i++;
+		if(*s == uc)
+			return (char *)s;
+		s++;
 	}
+	if (uc == '\0')
+		return (char *)s;
 	return (NULL);
 }
