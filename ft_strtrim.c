@@ -13,7 +13,7 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/06 03:52:13 by nbudzins                                 */
-/*   Updated: 2024/03/09 17:45:10 by nbudzins                                 */
+/*   Updated: 2024/03/11 16:20:20 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
@@ -43,14 +43,10 @@ char *ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	j = ft_strlen(s1) - 1;
 	while(isinset(s1[i], set))
-	{
 		i++;
-	}
 	while(isinset(s1[j], set))
-	{
 		j--;
-	}
-	ptr = malloc((j - i + 1));
+	ptr = malloc(j - i + 2);
 	if(ptr != NULL)
 		ft_strlcpy(ptr, s1 + i, j - i + 2);
 	return (ptr);

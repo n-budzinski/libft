@@ -2,10 +2,7 @@
 #define LIBFT_H
 #include <stdlib.h>
 //#include <unistd.h>
-//typedef unsigned int size_t;
 
-
-//PART 1
 void	ft_bzero(void *s, size_t n);
 int	ft_isalnum(int c);
 int	ft_isalpha(int c);
@@ -34,7 +31,8 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
-
-//PART 2
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putchar_fd(char c, int fd);
 
 #endif

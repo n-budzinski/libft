@@ -13,7 +13,7 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/06 03:35:52 by nbudzins                                 */
-/*   Updated: 2024/03/09 00:00:48 by nbudzins                                 */
+/*   Updated: 2024/03/11 21:35:22 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ char *ft_strjoin(char const *s1, char const *s2)
 	ptr = (char *)malloc(tl);
 	if(ptr != NULL)
 	{
-		ft_strlcpy(ptr, s1, s1l);
-		ft_strlcpy(ptr + s1l, s2, s2l);
+		ft_strlcpy(ptr, s1, s1l + 1);
+		ft_strlcpy(ptr + s1l, s2, s2l + 1);
 	}
 	return (ptr);
 }

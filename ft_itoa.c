@@ -13,13 +13,13 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/09 12:57:58 by nbudzins                                 */
-/*   Updated: 2024/03/09 15:28:12 by nbudzins                                 */
+/*   Updated: 2024/03/12 00:00:26 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-static size_t calcsize(int n)
+static size_t calcsize(long int n)
 {
 	size_t buffsize;
 	buffsize = 0;
@@ -43,22 +43,26 @@ static size_t calcsize(int n)
 char	*ft_itoa(int n)
 {
 	size_t memsize;
+	long int val;
 	char *ptr;
 
-	memsize = calcsize(n);
+	val = (long int)n;
+	memsize = calcsize(val);
 	ptr = calloc(memsize + 1, sizeof (char));
 	if (!ptr)
 		return (NULL);
-	if (n < 0)
+	if (val == 0)
+		*ptr = '0';
+	else if (val < 0)
 	{
 		*ptr = '-';
-		n *= -1;
+		val *= -1;
 	}
-	while (n > 0)
+	while (val > 0)
 	{
 		memsize--;
-		ptr[memsize] = n % 10 + '0';
-		n /= 10;
+		ptr[memsize] = val % 10 + '0';
+		val /= 10;
 	}
 	return (ptr);
 }

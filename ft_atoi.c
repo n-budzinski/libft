@@ -6,7 +6,7 @@
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 21:15:21 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/03/08 18:07:48 by nbudzins         ###   ########.fr       */
+/*   Updated: 2024/03/11 23:19:58 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 unsigned char	iswhitespace(unsigned char c)
 {
-	return (c <= 32 || c == 127);
+	return ((c >= 9 && c <= 13) || c == 32);
 }
 
 int	ft_atoi(const char *nptr)
@@ -24,7 +24,7 @@ int	ft_atoi(const char *nptr)
 
 	sign = 1;
 	result = 0;
-	if (!nptr)
+	if (!nptr || !*nptr)
 		return (0);
 	while (iswhitespace(*nptr))
 		nptr++;

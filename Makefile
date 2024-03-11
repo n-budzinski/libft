@@ -7,11 +7,7 @@ CCFLAGS=-Wall -Wextra -Werror
 CPPFLAGS=-I$(INCDIR)
 COMPILE=$(CC) $(CCFLAGS) $(CPPFLAGS)
 SRC = $(addsuffix .c,\
-ft_atoi \
-ft_bzero \
-ft_calloc \
-ft_isalnum \
-ft_isalpha \
+ft_atoi ft_bzero ft_calloc ft_isalnum ft_isalpha \
 ft_isascii \
 ft_isdigit \
 ft_isprint \
@@ -34,7 +30,7 @@ ft_strtrim \
 ft_substr \
 ft_tolower \
 ft_toupper \
-ft_itoa )
+ft_itoa ft_strmapi ft_striteri ft_putstr_fd)
 
 all: $(NAME)
 
