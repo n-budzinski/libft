@@ -13,12 +13,12 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/09 12:57:58 by nbudzins                                 */
-/*   Updated: 2024/03/12 00:00:26 by nbudzins                                 */
+/*   Updated: 2024/03/12 01:31:59 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 static size_t calcsize(long int n)
 {
 	size_t buffsize;

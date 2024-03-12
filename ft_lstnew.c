@@ -8,20 +8,25 @@
 /*    ▪        ·▀ ·▀▀▀ •    ▀▀▀▀ ▀▪ ▀  ▀ .▀  ▀ ▀▀▀▀  ▀  ▀  ▀▀▀▀ ▀             */
 /*                                                          .           ▪     */
 /*            .                                    .                          */
-/*   ft_putchar_fd.c    ▪             .                                       */
+/*   ft_lstnew.c        ▪             .                                       */
 /*   .                                                                        */
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
-/*   Created: 2024/03/12 00:23:40 by nbudzins                                 */
-/*   Updated: 2024/03/12 00:44:12 by nbudzins                                 */
+/*   Created: 2024/03/12 02:34:44 by nbudzins                                 */
+/*   Updated: 2024/03/12 02:54:25 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+t_list *ft_lstnew(void *content)
 {
-	if (fd < 0)
-		return ;
-	write(fd, &c, 1);
+	t_list *list;
+
+	list = malloc(sizeof (t_list));
+	if (!list)
+		return (NULL);
+	list->content = content;
+	list->next = NULL;
+	return (list);
 }

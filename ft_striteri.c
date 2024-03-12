@@ -13,7 +13,7 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/12 00:02:34 by nbudzins                                 */
-/*   Updated: 2024/03/12 00:17:31 by nbudzins                                 */
+/*   Updated: 2024/03/12 01:48:08 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
@@ -23,8 +23,13 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t i;
 
-	if (s && *s && f)
 	i = 0;
+	if (!s || !f)
+		return ; 
 	while (s[i])
+	{
 		f(i, s + i);
+		i++;
+	}
+
 }

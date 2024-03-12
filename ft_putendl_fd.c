@@ -8,20 +8,19 @@
 /*    ▪        ·▀ ·▀▀▀ •    ▀▀▀▀ ▀▪ ▀  ▀ .▀  ▀ ▀▀▀▀  ▀  ▀  ▀▀▀▀ ▀             */
 /*                                                          .           ▪     */
 /*            .                                    .                          */
-/*   ft_putchar_fd.c    ▪             .                                       */
+/*   ft_putendl_fd.c    ▪             .                                       */
 /*   .                                                                        */
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
-/*   Created: 2024/03/12 00:23:40 by nbudzins                                 */
-/*   Updated: 2024/03/12 00:44:12 by nbudzins                                 */
+/*   Created: 2024/03/12 00:57:16 by nbudzins                                 */
+/*   Updated: 2024/03/12 01:02:54 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-	if (fd < 0)
-		return ;
-	write(fd, &c, 1);
+	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }
