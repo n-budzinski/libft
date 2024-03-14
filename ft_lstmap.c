@@ -8,37 +8,35 @@
 /*    ▪        ·▀ ·▀▀▀ •    ▀▀▀▀ ▀▪ ▀  ▀ .▀  ▀ ▀▀▀▀  ▀  ▀  ▀▀▀▀ ▀             */
 /*                                                          .           ▪     */
 /*            .                                    .                          */
-/*   ft_putnbr_fd.c     ▪             .                                       */
+/*   ft_lstmap.c        ▪             .                                       */
 /*   .                                                                        */
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
-/*   Created: 2024/03/12 01:04:04 by nbudzins                                 */
-/*   Updated: 2024/03/14 05:53:55 by nbudzins                                 */
+/*   Created: 2024/03/14 05:19:51 by nbudzins                                 */
+/*   Updated: 2024/03/14 05:50:13 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 {
-	char	value;
+	t_list	*new_list;
+	t_list	*new_node;
 
-	if (n == -2147483648)
+	if (!lst || !f || !del)
+		return (NULL);
+	new_list = NULL;
+	while (lst)
 	{
-		write(fd, "-2147483648", 11);
-		return ;
+		new_node = ft_lstnew(f(lst->content));
+		if (!new_node)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, new_node);
+		lst = lst->next;
 	}
-	if (n < 0)
-	{
-		write(fd, "-", 1);
-		n *= -1;
-	}
-	value = n % 10 + '0';
-	if (n > 9)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		write(fd, &value, 1);
-	}
-	else
-		write(fd, &value, 1);
+	return (new_list);
 }
