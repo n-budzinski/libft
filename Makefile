@@ -36,7 +36,7 @@ so:
 	gcc -nostartfiles -shared -o $(NAME).so $(OBJ)
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(BOBJ)
 
 fclean: clean
 	$(RM) $(NAME).a
