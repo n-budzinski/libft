@@ -13,13 +13,13 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/09 22:34:36 by nbudzins                                 */
-/*   Updated: 2024/03/10 00:25:20 by nbudzins                                 */
+/*   Updated: 2024/03/14 06:32:39 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t		len;
 	size_t		i;

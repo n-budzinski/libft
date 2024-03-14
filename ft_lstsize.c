@@ -13,15 +13,15 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/12 03:36:52 by nbudzins                                 */
-/*   Updated: 2024/03/12 03:48:39 by nbudzins                                 */
+/*   Updated: 2024/03/14 06:40:22 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (lst)

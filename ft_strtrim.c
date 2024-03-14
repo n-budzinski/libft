@@ -13,16 +13,16 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/06 03:52:13 by nbudzins                                 */
-/*   Updated: 2024/03/11 16:20:20 by nbudzins                                 */
+/*   Updated: 2024/03/14 06:51:30 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static int isinset(char c, char const *set)
+static int	isinset(char c, char const *set)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (set[i] != '\0')
@@ -34,20 +34,20 @@ static int isinset(char c, char const *set)
 	return (0);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char *ptr;
-	size_t i;
-	size_t j;
-	
+	char	*ptr;
+	size_t	i;
+	size_t	j;
+
 	i = 0;
 	j = ft_strlen(s1) - 1;
-	while(isinset(s1[i], set))
+	while (isinset(s1[i], set))
 		i++;
-	while(isinset(s1[j], set))
+	while (isinset(s1[j], set))
 		j--;
 	ptr = malloc(j - i + 2);
-	if(ptr != NULL)
+	if (ptr != NULL)
 		ft_strlcpy(ptr, s1 + i, j - i + 2);
 	return (ptr);
 }

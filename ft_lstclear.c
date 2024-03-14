@@ -13,19 +13,19 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/13 23:43:41 by nbudzins                                 */
-/*   Updated: 2024/03/14 04:52:13 by nbudzins                                 */
+/*   Updated: 2024/03/14 06:31:25 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *next;
+	t_list	*next;
 
 	if (del)
 	{
-		while(*lst)
+		while (*lst)
 		{
 			next = (*lst)->next;
 			ft_lstdelone(*lst, del);

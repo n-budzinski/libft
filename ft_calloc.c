@@ -13,7 +13,7 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/01 04:05:31 by nbudzins                                 */
-/*   Updated: 2024/03/09 22:27:05 by nbudzins                                 */
+/*   Updated: 2024/03/14 06:37:16 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@
 //	return (0);
 //}
 //
-void 	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t mem;
-	void *ptr;
+	size_t	mem;
+	void	*ptr;
 
 	mem = nmemb * size;
 	ptr = (void *)malloc(mem);

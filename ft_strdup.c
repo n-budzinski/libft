@@ -13,16 +13,16 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/06 02:42:35 by nbudzins                                 */
-/*   Updated: 2024/03/08 23:25:43 by nbudzins                                 */
+/*   Updated: 2024/03/14 06:49:10 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
-	size_t len;
-	void *ptr;
+	size_t	len;
+	void	*ptr;
 
 	len = ft_strlen(s);
 	ptr = (void *)malloc(len + 1);

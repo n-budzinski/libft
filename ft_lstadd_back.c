@@ -13,13 +13,13 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/12 03:53:23 by nbudzins                                 */
-/*   Updated: 2024/03/12 04:10:39 by nbudzins                                 */
+/*   Updated: 2024/03/14 06:40:43 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	if (lst && *lst)
 		ft_lstlast(*lst)->next = new;

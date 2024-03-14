@@ -13,7 +13,7 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/06 04:55:20 by nbudzins                                 */
-/*   Updated: 2024/03/11 19:53:13 by nbudzins                                 */
+/*   Updated: 2024/03/14 06:53:03 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ static size_t	calc_size(char const *s, char c)
 		if (s[i] != c)
 		{
 			j++;
-			while (s[i] != '\0' && s[i++] != c);
+			while (s[i] != '\0' && s[i] != c)
+				i++;
 		}
 		else
 			i++;
@@ -41,7 +42,7 @@ static size_t	calc_size(char const *s, char c)
 
 static char	**memfree(char **ptr, size_t k)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < k)
@@ -65,12 +66,11 @@ static char	**split(char **ptr, char const *s, char c)
 			j = 0;
 			while (s[i + j] != c && s[i + j] != '\0')
 				j++;
-			//printf("Length of the substring is %li\n", j);
 			ptr[k] = malloc(j + 1);
 			if (!ptr[k])
 				return (memfree(ptr, k));
 			ft_strlcpy(ptr[k++], s + i, j + 1);
-			i += j; 
+			i += j;
 		}
 		else
 			i++;

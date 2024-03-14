@@ -6,13 +6,13 @@
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 21:06:00 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/02/29 19:10:27 by nbudzins         ###   ########.fr       */
+/*   Updated: 2024/03/14 06:44:29 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	if(c >= 65 && c <= 90)
+	if (c >= 65 && c <= 90)
 		return (c + 32);
-	return c;
+	return (c);
 }

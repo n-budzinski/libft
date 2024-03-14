@@ -6,16 +6,16 @@
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 16:41:49 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/03/07 20:55:33 by nbudzins         ###   ########.fr       */
+/*   Updated: 2024/03/14 06:42:09 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char 	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
@@ -32,5 +32,5 @@ char 	*ft_strnstr(const char *big, const char *little, size_t len)
 		j = 0;
 		i++;
 	}
-	return ((char *)NULL);
+	return ((char *) NULL);
 }

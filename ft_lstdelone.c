@@ -13,13 +13,13 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/13 23:32:49 by nbudzins                                 */
-/*   Updated: 2024/03/13 23:41:01 by nbudzins                                 */
+/*   Updated: 2024/03/14 06:38:56 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	if (del)
 		del(lst->content);
