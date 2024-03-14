@@ -18,20 +18,16 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//static size_t callocguard(size_t v1, size_t v2)
-//{
-//	if (v2 && sizeof(size_t) / v2 > v1)
-//	{
-//		return (v1 * v2);
-//	}
-//	return (0);
-//}
-//
+
 void	*ft_calloc(size_t nmemb, size_t size)
 {
+	size_t	max;
 	size_t	mem;
 	void	*ptr;
 
+	max = -1;
+	if (!nmemb || max / nmemb < size)
+		return (NULL);
 	mem = nmemb * size;
 	ptr = (void *)malloc(mem);
 	if (ptr != NULL)
