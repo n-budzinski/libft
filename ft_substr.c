@@ -13,7 +13,7 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/06 02:49:26 by nbudzins                                 */
-/*   Updated: 2024/03/14 05:53:10 by nbudzins                                 */
+/*   Updated: 2024/03/17 19:08:40 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
@@ -21,16 +21,22 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	void	*ptr;
-	size_t	subsize;
+	char	*ptr;
+	size_t	s_len;
 
-	if (start >= (unsigned int)ft_strlen(s))
-		return (ft_strdup(""));
-	subsize = ft_strlen(s + start);
-	if (len < subsize)
-		subsize = len;
-	ptr = ft_calloc(len + 1, sizeof(char));
-	if (ptr != NULL)
-		ft_strlcpy(ptr, s + start, subsize + 1);
+	if (!s)
+		return (0);
+	if ((size_t)ft_strlen(s) <= start)
+	{
+		ptr = ft_strdup("");
+		return (ptr);
+	}
+	s_len = ft_strlen(s + start);
+	if (s_len > len)
+		s_len = len;
+	ptr = (char *)malloc(s_len + 1);
+	if (!ptr)
+		return (0);
+	ft_strlcpy(ptr, s + start, s_len + 1);
 	return (ptr);
 }
