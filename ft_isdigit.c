@@ -6,7 +6,7 @@
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 18:47:19 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/03/14 06:04:01 by nbudzins         ###   ########.fr       */
+/*   Updated: 2024/03/17 12:03:34 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,3 @@ int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }
-/*
-int main(){
-	#include <stdio.h>
-	if(ft_isdigit('A'))
-		printf("True");
-	else
-		printf("False");
-	return 0;
-}
-*/

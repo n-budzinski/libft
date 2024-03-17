@@ -13,7 +13,7 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/09 12:57:58 by nbudzins                                 */
-/*   Updated: 2024/03/14 06:54:59 by nbudzins                                 */
+/*   Updated: 2024/03/14 23:21:21 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ft_itoa(int n)
 
 	val = (long int)n;
 	memsize = calcsize(val);
-	ptr = calloc(memsize + 1, sizeof (char));
+	ptr = ft_calloc(memsize + 1, sizeof (char));
 	if (!ptr)
 		return (NULL);
 	if (val == 0)

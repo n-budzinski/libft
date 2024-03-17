@@ -6,7 +6,7 @@
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 21:29:32 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/03/14 06:37:44 by nbudzins         ###   ########.fr       */
+/*   Updated: 2024/03/17 12:04:18 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,3 @@ int	ft_strlen(const char *c)
 		i++;
 	return (i);
 }
-/*
-int	main()
-{
-	#include <stdio.h>
-	printf("%i", ft_strlen("j"));
-	return 0;
-}
-*/

@@ -13,7 +13,7 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/01 04:05:31 by nbudzins                                 */
-/*   Updated: 2024/03/14 06:37:16 by nbudzins                                 */
+/*   Updated: 2024/03/17 11:58:39 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*ptr;
 
 	max = -1;
-	if (!nmemb || max / nmemb < size)
+	if (!nmemb || !size)
 		return (NULL);
 	mem = nmemb * size;
 	ptr = (void *)malloc(mem);
