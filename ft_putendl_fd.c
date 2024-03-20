@@ -13,7 +13,7 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/12 00:57:16 by nbudzins                                 */
-/*   Updated: 2024/03/12 01:02:54 by nbudzins                                 */
+/*   Updated: 2024/03/20 21:20:17 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	write(fd, s, ft_strlen(s));
-	write(fd, "\n", 1);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

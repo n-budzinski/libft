@@ -6,7 +6,7 @@
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 16:24:24 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/03/14 06:30:49 by nbudzins         ###   ########.fr       */
+/*   Updated: 2024/03/20 22:21:32 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (((char *)s)[i] == (char)c)
-			return ((void *)(s + i));
+			return ((void *)(&s[i]));
 		i++;
 	}
 	return (NULL);

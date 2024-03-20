@@ -6,13 +6,13 @@
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 21:15:21 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/03/14 06:05:49 by nbudzins         ###   ########.fr       */
+/*   Updated: 2024/03/20 22:24:35 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned char	iswhitespace(unsigned char c)
+static unsigned char	iswhitespace(unsigned char c)
 {
 	return ((c >= 9 && c <= 13) || c == 32);
 }

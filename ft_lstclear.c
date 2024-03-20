@@ -13,7 +13,7 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/13 23:43:41 by nbudzins                                 */
-/*   Updated: 2024/03/14 06:31:25 by nbudzins                                 */
+/*   Updated: 2024/03/20 21:55:12 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
@@ -23,13 +23,12 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*next;
 
-	if (del)
+	if (!del || !lst || !*lst)
+		return ;
+	while (*lst)
 	{
-		while (*lst)
-		{
-			next = (*lst)->next;
-			ft_lstdelone(*lst, del);
-			*lst = next;
-		}
+		next = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = next;
 	}
 }

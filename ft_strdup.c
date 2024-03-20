@@ -13,7 +13,7 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/06 02:42:35 by nbudzins                                 */
-/*   Updated: 2024/03/14 06:49:10 by nbudzins                                 */
+/*   Updated: 2024/03/20 20:18:37 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ char	*ft_strdup(const char *s)
 	void	*ptr;
 
 	len = ft_strlen(s);
-	ptr = (void *)malloc(len + 1);
+	ptr = (char *)malloc(len + 1);
 	if (ptr == NULL)
-		return (0);
-	ft_memcpy(ptr, s, len + 1);
+		return (NULL);
+	ft_strlcpy(ptr, s, len + 1);
 	return (ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 19:25:22 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/03/14 06:39:37 by nbudzins         ###   ########.fr       */
+/*   Updated: 2024/03/20 19:30:52 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	i = 0;
 	if (size > 0)
 	{
-		while (src[i] && i < size - 1)
+		while (i < size - 1 && src[i])
 		{
 			dst[i] = src[i];
 			i++;

@@ -6,7 +6,7 @@
 /*   By: nbudzins <nbudzins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 21:29:32 by nbudzins          #+#    #+#             */
-/*   Updated: 2024/03/17 12:04:18 by nbudzins         ###   ########.fr       */
+/*   Updated: 2024/03/20 21:00:26 by nbudzins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_strlen(const char *c)
 	int	i;
 
 	i = 0;
-	while (c[i] != 0x00)
+	while (c[i] != '\0')
 		i++;
 	return (i);
 }

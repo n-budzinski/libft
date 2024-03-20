@@ -13,7 +13,7 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/01 04:05:31 by nbudzins                                 */
-/*   Updated: 2024/03/17 19:17:30 by nbudzins                                 */
+/*   Updated: 2024/03/20 20:08:43 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
@@ -24,10 +24,12 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	mem;
 	void	*ptr;
 
-	mem = nmemb * size;
-	if (mem && mem / nmemb != size)
+	if (!nmemb || !size)
+		return (malloc(1));
+	if (nmemb && nmemb * size / nmemb != size)
 		return (NULL);
-	ptr = (void *)malloc(mem);
+	mem = nmemb * size;
+	ptr = malloc(mem);
 	if (ptr != NULL)
 		ft_bzero(ptr, mem);
 	return (ptr);
