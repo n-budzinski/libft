@@ -14,8 +14,9 @@ ft_strnstr ft_strrchr ft_strtrim ft_substr ft_tolower ft_toupper ft_itoa \
 ft_strmapi ft_putchar_fd ft_striteri ft_putstr_fd ft_putendl_fd ft_putnbr_fd) 
 
 BON = $(addsuffix .c,\
-ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back ft_lstdelone \
-ft_lstclear ft_lstiter ft_lstmap)
+ft_lstnew_bonus ft_lstadd_front_bonus ft_lstsize_bonus ft_lstlast_bonus \
+ft_lstadd_back_bonus ft_lstdelone_bonus ft_lstclear_bonus ft_lstiter_bonus \
+ft_lstmap_bonus)
 
 OBJ := $(SRC:%.c=%.o)
 BOBJ := $(BON:%.c=%.o)

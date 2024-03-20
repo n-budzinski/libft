@@ -13,7 +13,7 @@
 /*   By: nbudzins <nbudzins@student.42warsaw.pl>            ▪                 */
 /*                                                                   .        */
 /*   Created: 2024/03/06 04:55:20 by nbudzins                                 */
-/*   Updated: 2024/03/14 06:53:03 by nbudzins                                 */
+/*   Updated: 2024/03/20 23:06:33 by nbudzins                                 */
 /*                                               .                 .          */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ static char	**memfree(char **ptr, size_t k)
 	i = 0;
 	while (i < k)
 		free(ptr[i++]);
-	return (ptr);
+	free(ptr);
+	return (NULL);
 }
 
 static char	**split(char **ptr, char const *s, char c)
